@@ -54,7 +54,7 @@ class MoviesController < ApplicationController
       flash.keep
       redirect_to movies_path
     end
-    @movies = Movie.where(:director => @movie.director)
+    @movies = Movie.same_director_method(@movie.director)
   end
 
   def update
